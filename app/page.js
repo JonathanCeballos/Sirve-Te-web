@@ -45,9 +45,9 @@ export default function Home() {
     <main className="main-wrapper">
       <button onClick={() => setIsLoginOpen(true)} className="config-btn">⚙️</button>
       <div className="hero-section">
-        <h1 className="title">Sirve-te</h1>
-        <p className="subtitle">Coffee & Snacks Sirvete</p>
-        <button onClick={() => setView('tables')} className="btn-primary">INICIAR</button>
+        <h1 className="title">Sirve-té</h1>
+        <p className="subtitle">⛾ Coffee & Snacks 🍵 </p>
+        <button onClick={() => setView('tables')} className="btn-primary">Acceso Cliente</button>
       </div>
     </main>
   );
