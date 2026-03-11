@@ -44,11 +44,29 @@ export default function Home() {
   return (
     <main className="main-wrapper">
       <button onClick={() => setIsLoginOpen(true)} className="config-btn">⚙️</button>
-      <div className="hero-section">
-        <h1 className="title">Sirve-te</h1>
-        <p className="subtitle">Coffee & Snacks Sirvete</p>
-        <button onClick={() => setView('tables')} className="btn-primary">INICIAR</button>
-      </div>
+
+      {view === 'home' && (
+        <div className="hero-section">
+          <h1 className="title">Sirve-te</h1>
+          <p className="subtitle">Coffee & Snacks Sirvete</p>
+          <button onClick={() => setView('tables')} className="btn-primary">INICIAR</button>
+        </div>
+      )}
+
+      {view === 'tables' && (
+        <div className="tables-section">
+          <h2>Mesas disponibles</h2>
+          <div className="tables-grid">
+            {mesas.map(mesa => (
+              <TableCard 
+                key={mesa.id} 
+                mesa={mesa} 
+                onSelect={() => setSelectedTable(mesa)} 
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </main>
   );
 }
