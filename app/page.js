@@ -9,7 +9,7 @@ import { ProductCard } from '../src/modules/products/presentation/ProductCard';
 import { LoginModal } from '../src/modules/admin/presentation/LoginModal';
 import { AdminDashboard } from '../src/modules/admin/presentation/AdminDashboard';
 
-// --- LÓGICA (Asegúrate de que el nombre del archivo coincida con el disco) ---
+// --- LÓGICA ---
 import { occupyTable } from '../src/modules/tables/application/occupy-table.usecase';
 import { TableStorageRepository } from '../src/modules/tables/infraestructure/local-storage.repository';
 
@@ -60,12 +60,36 @@ export default function Home() {
             {mesas.map(mesa => (
               <TableCard 
                 key={mesa.id} 
-                mesa={mesa} 
-                onSelect={() => setSelectedTable(mesa)} 
+                table={mesa} 
+                onSelect={(mesaSeleccionada) => {
+                  setSelectedTable(mesaSeleccionada);
+                  setView('nameModal'); // 👉 al dar clic, abre el modal
+                }} 
               />
             ))}
           </div>
         </div>
+      )}
+
+      {view === 'nameModal' && (
+        <NameModal 
+          isOpen={true} 
+          onClose={() => setView('tables')} 
+          onConfirm={(name) => {
+            try {
+              const updatedTable = occupyTable(selectedTable, name);
+              const updatedMesas = mesas.map(m =>
+                m.id === updatedTable.id ? updatedTable : m
+              );
+              setMesas(updatedMesas);
+              TableStorageRepository.saveTables(updatedMesas);
+              setCurrentCustomer(name);
+              setView('products'); // 👉 después de confirmar, pasa al catálogo
+            } catch (error) {
+              alert(error.message);
+            }
+          }} 
+        />
       )}
     </main>
   );
