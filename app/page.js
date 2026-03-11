@@ -44,19 +44,15 @@ export default function Home() {
   return (
     <main className="main-wrapper">
       <button onClick={() => setIsLoginOpen(true)} className="config-btn">⚙️</button>
-<<<<<<< HEAD
-      <div className="hero-section">
-        <h1 className="title">Sirve-té</h1>
-        <p className="subtitle">⛾ Coffee & Snacks 🍵 </p>
-        <button onClick={() => setView('tables')} className="btn-primary">Acceso Cliente</button>
-      </div>
-=======
 
       {view === 'home' && (
         <div className="hero-section">
-          <h1 className="title">Hola! Bienvenido a Sirve-te!</h1>
+          <h1 className="title">Hola! Bienvenido a ⛾ Sirve-te! 🍵 </h1>
+          
+          <h2 clasName="title">*recordar implementar el boton de accceso a mesero</h2>
+
           <p className="subtitle">Coffee & Snacks Sirvete</p>
-          <button onClick={() => setView('tables')} className="btn-primary">INICIAR</button>
+          <button onClick={() => setView('tables')} className="btn-primary">Acceso Cliente</button>
         </div>
       )}
 
@@ -98,7 +94,6 @@ export default function Home() {
           }} 
         />
       )}
->>>>>>> 1cecd4bff1d9c38e1b22969063e16f1cd9f5188d
     </main>
   );
 }
