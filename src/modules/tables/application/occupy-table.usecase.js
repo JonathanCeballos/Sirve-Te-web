@@ -1,3 +1,4 @@
+//src/modules/tables/application/occupy-table.usecase.js
 // Esta función contiene la lógica de negocio pura
 export const occupyTable = (table, name) => {
     if (!name || name.trim() === "") {

@@ -1,3 +1,6 @@
+
+//src/modules/tables/presentation/TableCard.jsx
+
 export const TableCard = ({ table, onSelect }) => {
     // Clases dinámicas para el color pastel (Verde si libre, Rojo si ocupada)
     const colorClass = table.isOccupied 

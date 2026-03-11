@@ -1,4 +1,4 @@
-
+//src/modules/admin/presentation/LoginModal.jsx
 export const LoginModal = ({ isOpen, onClose, onLogin }) => {
   if (!isOpen) return null;
 

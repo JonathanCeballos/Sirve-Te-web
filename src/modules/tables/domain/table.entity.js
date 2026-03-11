@@ -1,3 +1,5 @@
+//src/modules/tables/domain/table.entity.js
+
 // Definimos cómo es una mesa en nuestro sistema
 export class Table {
     constructor(id, number, isOccupied = false, customerName = "") {

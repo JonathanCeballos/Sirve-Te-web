@@ -1,3 +1,5 @@
+//src/modules/tables/infraestructure/local-storage.repository.js
+
 export const TableStorageRepository = {
   // Guardar el estado actual de todas las mesas
   saveTables: (tables) => {

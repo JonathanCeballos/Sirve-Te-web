@@ -1,3 +1,5 @@
+//src/modules/products/domain/product.entity.js
+
 export class Product {
     constructor(id, name, price, category, image) {
         this.id = id;

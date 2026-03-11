@@ -1,4 +1,5 @@
 
+//src/modules/tables/presentation/NameModal.jsx
 export const NameModal = ({ isOpen, onClose, onConfirm }) => {
   if (!isOpen) return null;
 

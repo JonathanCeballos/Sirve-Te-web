@@ -1,3 +1,4 @@
+//src/modules/products/presentation/ProductCard.jsx
 
 export const ProductCard = ({ product, onAdd }) => {
   return (
