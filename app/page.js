@@ -47,7 +47,7 @@ export default function Home() {
 
       {view === 'home' && (
         <div className="hero-section">
-          <h1 className="title">Sirve-te</h1>
+          <h1 className="title">Hola! Bienvenido a Sirve-te!</h1>
           <p className="subtitle">Coffee & Snacks Sirvete</p>
           <button onClick={() => setView('tables')} className="btn-primary">INICIAR</button>
         </div>
